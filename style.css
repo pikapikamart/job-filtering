@@ -28,6 +28,7 @@ p {
 
 header {
   background: #5ba4a4 url("images/bg-header-desktop.svg") no-repeat;
+  background-size: cover;
   height: 156px;
 }
 
@@ -291,6 +292,37 @@ header {
 
 [data-label="filteredItem"]:hover::after {
   background-color: #2c3a3a;
+}
+
+.clear-btn {
+  color: #5ba4a4;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: auto;
+  position: relative;
+}
+
+.clear-btn::after {
+  content: "";
+  background-color: #5ba4a4;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  top: 110%;
+  width: 100%;
+}
+
+.clear-btn:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 @media (max-width: 1280px) {

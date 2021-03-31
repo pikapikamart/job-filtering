@@ -30,6 +30,7 @@ p {
 
 header {
     background: $dd-cyan url("images/bg-header-desktop.svg") no-repeat;
+    background-size: cover;
     height: 156px;
 }
 
@@ -271,6 +272,31 @@ header {
 
     &:hover::after {
         background-color: $vdg-cyan;
+    }
+}
+
+.clear-btn {
+    color: $dd-cyan;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: auto;
+    position: relative;
+
+    &::after {
+        content: "";
+        background-color: $dd-cyan;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        top: 110%;
+        width: 100%
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
     }
 }
 

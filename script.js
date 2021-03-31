@@ -5,6 +5,21 @@ let currentStack = {};
 
 const container = document.querySelector(".container");
 const currentitems = document.querySelector(".current-stack");
+const clearButton = document.querySelector(".clear-btn");
+
+// Listeners
+clearButton.addEventListener("click", event =>{
+    event.preventDefault();
+    let items = els("[data-label=filteredItem]");
+    items.forEach(node => node.remove())
+    stackElements.forEach(stack => {
+        stack.element.classList.remove("d-none");
+        stack.available = true;
+    })
+    checkFilterContainer();
+    currentStack = {};
+})
+
 
 // Getters
 function el(e) {
@@ -15,9 +30,14 @@ function els(e) {
     return document.querySelectorAll(e);
 }
 
+// Manipulate
+// Sorry for the naming of variable or classes, I got used to
+// naming things so short because that's what we do when doing
+// competitive programming
+
 function filterStack(item, element) {
     let ar = [];
-    currentitems.appendChild(element);
+    currentitems.prepend(element);
     stackElements.forEach(stack => {
         if (stack.available && !stack.filter.includes(item)) {
             stack.element.classList.add("d-none");
@@ -50,13 +70,12 @@ function unFilterStack() {
 }
 
 function checkFilterContainer() {
-    if(!currentitems.childNodes.length) {
+    if(Math.floor(currentitems.childNodes.length / 2) == 1) {
         currentitems.classList.add("d-none")
     } else{
         currentitems.classList.remove("d-none")
     }
 }
-
 
 
 // The reason for using promise is that since we are fetching something
