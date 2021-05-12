@@ -117,7 +117,6 @@ function filteredEvent(filter) {
 
 function unFilterStack() {
    const filterKeys = Object.keys(filters);
-   console.log(filterKeys);
    currentStack.forEach(stack =>{
       let check = filterKeys.every(key => stack.attributes.includes(key));
       if (check) {
