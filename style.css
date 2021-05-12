@@ -77,15 +77,25 @@ header {
 .f-14 {
   background-color: #eef6f6;
   border-radius: 8px;
+  border: none;
   color: #5ba4a4;
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
   padding: 8px 6px 4px;
-  -webkit-transition: color 0.3s ease, background-color 0.3s ease, -webkit-transform 0.3s ease;
-  transition: color 0.3s ease, background-color 0.3s ease, -webkit-transform 0.3s ease;
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: color 0.3s ease,
+ background-color 0.3s ease,
+ -webkit-transform 0.3s ease;
+  transition: color 0.3s ease,
+ background-color 0.3s ease,
+ -webkit-transform 0.3s ease;
+  transition: color 0.3s ease,
+ background-color 0.3s ease,
+ transform 0.3s ease;
+  transition: color 0.3s ease,
+ background-color 0.3s ease,
+ transform 0.3s ease,
+ -webkit-transform 0.3s ease;
 }
 
 .f-14:hover {
